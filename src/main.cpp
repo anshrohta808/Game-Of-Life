@@ -28,6 +28,14 @@ int main(int argc, char const *argv[])
          SetWindowTitle("**** Game of Life Stopped ****");
          sim.Stop();
       }
+      else if (IsKeyPressed(KEY_R))
+      {
+         sim.createRandomState();
+      }
+      else if (IsKeyPressed(KEY_BACKSPACE))
+      {
+         sim.clearGrid();
+      }
 
       // UPDATING STATES
       sim.update();

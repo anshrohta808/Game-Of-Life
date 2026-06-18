@@ -55,3 +55,15 @@ void Simulation::update()
         grid = tempGrid;
     }
 }
+
+void Simulation::clearGrid()
+{
+    if (!isRunning())
+        grid.clear();
+}
+
+void Simulation::createRandomState()
+{
+    if (!isRunning())
+        grid.fillRandomCells();
+}

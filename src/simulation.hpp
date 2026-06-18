@@ -9,10 +9,7 @@ private:
     bool run;
 
 public:
-    Simulation(int width, int height, int cellSize) : grid(width, height, cellSize), tempGrid(width, height, cellSize), run(false)
-    {
-        grid.fillRandomCells();
-    };
+    Simulation(int width, int height, int cellSize) : grid(width, height, cellSize), tempGrid(width, height, cellSize), run(false) {};
     void setCellValue(int row, int col, int val);
     void Draw();
     int countLiveNeighbours(int row, int col);
@@ -23,4 +20,6 @@ public:
         run = true;
     }
     void Stop() { run = false; }
+    void clearGrid();
+    void createRandomState();
 };

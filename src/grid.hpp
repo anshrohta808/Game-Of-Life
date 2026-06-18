@@ -16,4 +16,5 @@ public:
     int getRows() { return rows; }
     int getCols() { return cols; }
     void fillRandomCells();
+    void clear();
 };
