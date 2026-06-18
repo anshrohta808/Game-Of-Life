@@ -1,7 +1,7 @@
 #include "grid.hpp"
 #include <raylib.h>
 #include <vector>
-void grid::Draw()
+void Grid::Draw()
 {
     for (int row = 0; row < rows; row++)
         for (int col = 0; col < cols; col++)
@@ -11,7 +11,7 @@ void grid::Draw()
         }
 }
 
-void grid::setValue(int row, int col, int val)
+void Grid::setValue(int row, int col, int val)
 {
     if (row >= 0 && row < rows && col >= 0 && col < cols)
         cells[row][col] = val;

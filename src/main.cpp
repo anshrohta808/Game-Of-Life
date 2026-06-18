@@ -1,5 +1,5 @@
 #include <raylib.h>
-#include "grid.hpp"
+#include "simulation.hpp"
 const int winWIDTH = 750;
 const int winHEIGHT = 750;
 const int cellSize = 25;
@@ -8,12 +8,14 @@ Color background = {43, 45, 31, 255};
 int main(int argc, char const *argv[])
 {
    InitWindow(winWIDTH, winHEIGHT, "GAME SCREEN");
+   Simulation sim{winWIDTH, winHEIGHT, cellSize};
+   sim.setCellValue(0, 0, 1);
+   sim.setCellValue(1, 0, 1);
+   sim.setCellValue(1, 3, 1);
    // setting the fps limit for the game (ceiling for max limit of frames per second)
    SetTargetFPS(10);
-   grid g{winWIDTH, winHEIGHT, cellSize};
-   g.setValue(0, 0, 1);
-   // Game Simulation Loop
 
+   // Game Simulation Loop
    while (!WindowShouldClose())
    {
       // EVENT HANDALING
@@ -23,7 +25,7 @@ int main(int argc, char const *argv[])
       // DRAWING GAME
       BeginDrawing();
       ClearBackground(background);
-      g.Draw();
+      sim.Draw();
       EndDrawing();
    }
 
