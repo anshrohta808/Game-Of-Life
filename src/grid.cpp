@@ -57,3 +57,11 @@ void Grid::clear()
         }
     }
 }
+
+void Grid::ToggleCell(int row, int col)
+{
+    if (isWithinBounds(row, col))
+    {
+        cells[row][col] = !(cells[row][col]);
+    }
+}

@@ -17,4 +17,5 @@ public:
     int getCols() { return cols; }
     void fillRandomCells();
     void clear();
+    void ToggleCell(int row, int col);
 };

@@ -67,3 +67,8 @@ void Simulation::createRandomState()
     if (!isRunning())
         grid.fillRandomCells();
 }
+
+void Simulation::ToggleCell(int row, int col)
+{
+    grid.ToggleCell(row, col);
+}

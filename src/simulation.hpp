@@ -22,4 +22,5 @@ public:
     void Stop() { run = false; }
     void clearGrid();
     void createRandomState();
+    void ToggleCell(int row, int col);
 };
