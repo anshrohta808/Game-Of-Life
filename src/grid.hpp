@@ -11,4 +11,8 @@ public:
                                                 cellSize(cellSize), cells(rows, std::vector<int>(cols, 0)) {};
     void Draw();
     void setValue(int row, int col, int val);
+    bool isWithinBounds(int row, int col);
+    int getValue(int row, int col);
+    int getRows() { return rows; }
+    int getCols() { return cols; }
 };

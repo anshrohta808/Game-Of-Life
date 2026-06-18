@@ -1,4 +1,5 @@
 #include <raylib.h>
+#include <iostream>
 #include "simulation.hpp"
 const int winWIDTH = 750;
 const int winHEIGHT = 750;
@@ -12,6 +13,11 @@ int main(int argc, char const *argv[])
    sim.setCellValue(0, 0, 1);
    sim.setCellValue(1, 0, 1);
    sim.setCellValue(1, 3, 1);
+   sim.setCellValue(3, 4, 1);
+   sim.setCellValue(3, 5, 1);
+   sim.setCellValue(4, 5, 1);
+   sim.setCellValue(5, 29, 1);
+   std::cout << sim.countLiveNeighbours(3, 4) << std::endl;
    // setting the fps limit for the game (ceiling for max limit of frames per second)
    SetTargetFPS(10);
 
