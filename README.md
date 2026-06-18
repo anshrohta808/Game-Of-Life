@@ -26,3 +26,9 @@ Each frame, the program checks every cell and counts its eight neighbors. From t
 ## build
 
 This project uses the included `Makefile` and is set up for Raylib with `mingw32-make`.
+
+## attribution
+
+The `Makefile` used in this project came from the educ8s Raylib C++ starter template for VS Code:
+
+https://github.com/educ8s/Raylib-CPP-Starter-Template-for-VSCODE-V2
