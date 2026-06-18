@@ -15,4 +15,5 @@ public:
     int getValue(int row, int col);
     int getRows() { return rows; }
     int getCols() { return cols; }
+    void fillRandomCells();
 };

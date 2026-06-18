@@ -4,19 +4,15 @@
 const int winWIDTH = 750;
 const int winHEIGHT = 750;
 const int cellSize = 25;
-Color background = {43, 45, 31, 255};
+Color background = {0, 0, 0, 255};
 
 int main(int argc, char const *argv[])
 {
    InitWindow(winWIDTH, winHEIGHT, "GAME SCREEN");
    Simulation sim{winWIDTH, winHEIGHT, cellSize};
-   sim.setCellValue(5, 29, 1);
-   sim.setCellValue(6, 0, 1);
-   sim.setCellValue(5, 0, 1);
-   sim.setCellValue(4, 0, 1);
-   std::cout << sim.countLiveNeighbours(5, 29) << std::endl;
+
    // setting the fps limit for the game (ceiling for max limit of frames per second)
-   SetTargetFPS(10);
+   SetTargetFPS(12);
 
    // Game Simulation Loop
    while (!WindowShouldClose())
@@ -24,6 +20,7 @@ int main(int argc, char const *argv[])
       // EVENT HANDALING
 
       // UPDATING STATES
+      sim.update();
 
       // DRAWING GAME
       BeginDrawing();

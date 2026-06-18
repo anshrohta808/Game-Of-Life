@@ -6,7 +6,7 @@ void Grid::Draw()
     for (int row = 0; row < rows; row++)
         for (int col = 0; col < cols; col++)
         {
-            Color color = cells[row][col] ? Color{140, 150, 120, 255} : Color{255, 120, 150, 204};
+            Color color = cells[row][col] ? Color{140, 150, 120, 255} : Color{60, 60, 60, 255};
             DrawRectangle(col * cellSize, row * cellSize, cellSize - 1, cellSize - 1, color);
         }
 }
@@ -33,4 +33,16 @@ int Grid::getValue(int row, int col)
         return cells[row][col];
     }
     return 0;
+}
+
+void Grid::fillRandomCells()
+{
+    for (int row = 0; row < rows; row++)
+    {
+        for (int col = 0; col < cols; col++)
+        {
+            int randomValue = GetRandomValue(0, 4);
+            cells[row][col] = (randomValue == 4) ? 1 : 0;
+        }
+    }
 }
