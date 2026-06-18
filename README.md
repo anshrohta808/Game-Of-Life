@@ -27,6 +27,29 @@ Each frame, the program checks every cell and counts its eight neighbors. From t
 
 This project uses the included `Makefile` and is set up for Raylib with `mingw32-make`.
 
+## run
+
+To run this project on Windows, you need Raylib installed in the locations expected by the `Makefile`:
+
+- `C:/raylib/raylib`
+- `C:/raylib/w64devkit/bin`
+
+If your Raylib install is somewhere else, update `RAYLIB_PATH` and `COMPILER_PATH` in the `Makefile` first.
+
+Then, from the project folder, build it with:
+
+```powershell
+mingw32-make
+```
+
+That will create `game.exe`.
+
+Run it with:
+
+```powershell
+.\game.exe
+```
+
 ## attribution
 
 The `Makefile` used in this project came from the educ8s Raylib C++ starter template for VS Code:
