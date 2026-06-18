@@ -18,8 +18,8 @@ int Simulation::countLiveNeighbours(int row, int col)
     std::vector<std::pair<int, int>> nOffsets = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}, {-1, -1}, {-1, 1}, {1, -1}, {1, 1}};
     for (const auto &offset : nOffsets)
     {
-        int neighbourRow = row + offset.first;
-        int neighbourCol = col + offset.second;
+        int neighbourRow = (row + offset.first + grid.getRows()) % grid.getRows();
+        int neighbourCol = (col + offset.second + grid.getCols()) % grid.getCols();
         liveNeighbours += grid.getValue(neighbourRow, neighbourCol);
     }
     return liveNeighbours;

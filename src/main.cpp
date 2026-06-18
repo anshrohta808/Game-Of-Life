@@ -10,14 +10,11 @@ int main(int argc, char const *argv[])
 {
    InitWindow(winWIDTH, winHEIGHT, "GAME SCREEN");
    Simulation sim{winWIDTH, winHEIGHT, cellSize};
-   sim.setCellValue(0, 0, 1);
-   sim.setCellValue(1, 0, 1);
-   sim.setCellValue(1, 3, 1);
-   sim.setCellValue(3, 4, 1);
-   sim.setCellValue(3, 5, 1);
-   sim.setCellValue(4, 5, 1);
    sim.setCellValue(5, 29, 1);
-   std::cout << sim.countLiveNeighbours(3, 4) << std::endl;
+   sim.setCellValue(6, 0, 1);
+   sim.setCellValue(5, 0, 1);
+   sim.setCellValue(4, 0, 1);
+   std::cout << sim.countLiveNeighbours(5, 29) << std::endl;
    // setting the fps limit for the game (ceiling for max limit of frames per second)
    SetTargetFPS(10);
 
