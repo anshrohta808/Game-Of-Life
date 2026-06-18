@@ -27,28 +27,31 @@ int Simulation::countLiveNeighbours(int row, int col)
 
 void Simulation::update()
 {
-    for (int row = 0; row < grid.getRows(); row++)
+    if (isRunning())
     {
-        for (int col = 0; col < grid.getCols(); col++)
+        for (int row = 0; row < grid.getRows(); row++)
         {
-            int liveNeighbours = countLiveNeighbours(row, col);
-            int cellValue = grid.getValue(row, col);
+            for (int col = 0; col < grid.getCols(); col++)
+            {
+                int liveNeighbours = countLiveNeighbours(row, col);
+                int cellValue = grid.getValue(row, col);
 
-            if (cellValue == 1)
-            {
-                if (liveNeighbours > 3 || liveNeighbours < 2)
-                    tempGrid.setValue(row, col, 0);
+                if (cellValue == 1)
+                {
+                    if (liveNeighbours > 3 || liveNeighbours < 2)
+                        tempGrid.setValue(row, col, 0);
+                    else
+                        tempGrid.setValue(row, col, 1);
+                }
                 else
-                    tempGrid.setValue(row, col, 1);
-            }
-            else
-            {
-                if (liveNeighbours == 3)
-                    tempGrid.setValue(row, col, 1);
-                else
-                    tempGrid.setValue(row, col, 0);
+                {
+                    if (liveNeighbours == 3)
+                        tempGrid.setValue(row, col, 1);
+                    else
+                        tempGrid.setValue(row, col, 0);
+                }
             }
         }
+        grid = tempGrid;
     }
-    grid = tempGrid;
 }

@@ -18,6 +18,16 @@ int main(int argc, char const *argv[])
    while (!WindowShouldClose())
    {
       // EVENT HANDALING
+      if (IsKeyPressed(KEY_ENTER))
+      {
+         SetWindowTitle("**** Game of Life Started ****");
+         sim.Start();
+      }
+      else if (IsKeyPressed(KEY_SPACE))
+      {
+         SetWindowTitle("**** Game of Life Stopped ****");
+         sim.Stop();
+      }
 
       // UPDATING STATES
       sim.update();
